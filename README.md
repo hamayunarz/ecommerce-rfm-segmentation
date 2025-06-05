@@ -9,8 +9,7 @@ Run the following command in your terminal to install all required Python packag
 ```bash
 pip install -r requirements.txt
 
-
-E-commerce Customer Segmentation Project
+ecommerce-rfm-segmentation Project
 Project Overview
 This project analyzes e-commerce customer data to identify different customer segments and predict churn. The goal is to help businesses understand their customers better and make data-driven marketing decisions.
 What I Did
