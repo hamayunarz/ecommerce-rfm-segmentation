@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: ecommerce_rfm_source # This is the logical name you'll use in your {{ source() }} macro
+    database: nf260325 # Based on your.env POSTGRES_DB
+    schema: s_hamayunrahimzai # Based on your.env POSTGRES_SCHEMA
+    description: "Raw data tables from the e-commerce RFM system."
+    tables:
+      - name: customers_raw # New source table
+        description: "Raw customer demographic and location data."
+      - name: products_raw # New source table
+        description: "Raw product catalog data with various attributes."
+      - name: click_stream_raw # Declaring the raw clickstream table
+        description: "Raw clickstream data, including session and event details, with JSON event metadata."
+      - name: transactions_raw # Declaring the raw transactions table
+        description: "Raw transaction data, including order details and product information from purchases."
+
+       
