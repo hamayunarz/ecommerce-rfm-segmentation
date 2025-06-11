@@ -7,7 +7,7 @@ WITH customer_summary AS (
         SUM(total_amount) AS total_spent,
         AVG(total_amount) AS avg_order_value
     FROM {{ ref('stg_transaction_metadata') }}
-    WHERE payment_status = 'completed'
+    WHERE payment_status = 'Success'
     GROUP BY customer_id
 )
 SELECT 
