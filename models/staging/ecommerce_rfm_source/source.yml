@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: ecommerce_rfm_source # This is the logical name you'll use in your {{ source() }} macro
-    database: nf260325 # Based on your.env POSTGRES_DB
-    schema: s_hamayunrahimzai # Based on your.env POSTGRES_SCHEMA
+  - name: ecommerce_rfm_source 
+    database: nf260325 # Based on .env POSTGRES_DB
+    schema: s_hamayunrahimzai # Based on .env POSTGRES_SCHEMA
     description: "Raw data tables from the e-commerce RFM system."
     tables:
       - name: customers_raw # New source table
