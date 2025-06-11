@@ -2,9 +2,9 @@ SELECT
     id AS product_id, -- Renaming 'id' to 'product_id' for consistency
     gender,
     "masterCategory" AS category, -- Renaming 'masterCategory' to 'category'
-    subCategory,
-    articleType,
-    baseColour,
+    "subCategory",
+    "articleType",
+    "baseColour",
     season,
     year,
     usage,
