@@ -4,7 +4,6 @@ WITH rfm_scores AS (
         recency_days,
         frequency,
         monetary,
-        -- Simple scoring (1-3 scale for junior level)
         CASE
             WHEN recency_days <= 30 THEN 3
             WHEN recency_days <= 90 THEN 2
