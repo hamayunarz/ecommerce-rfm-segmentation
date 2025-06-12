@@ -40,8 +40,6 @@ my-ecommerce-segmentation-project/
 ├── src/                       # Non-dbt specific code
 │   ├── python_scripts/
 │   │   ├── ingest_raw_data.ipynb
-│   │   ├── TEST.ipynb
-│   │   └── rfm_calculator.py
 │   ├── sql_dbt_models/        # Entire DBT project structure (mirror of models/)
 │   └── sql_queries/           # Ad-hoc or external SQL queries
 │       ├── event_metadata.sql
