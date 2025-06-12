@@ -1,4 +1,4 @@
-# ecommerce-customer-segmentation
+# ecommerce-rfm-segmentation
 E-commerce Customer Segmentation - Data Analyst Bootcamp Capstone Project
 # Project Setup
 
@@ -20,23 +20,41 @@ Built predictive models to identify customers at risk of churning
 Created visualizations and dashboards to present findings
 
 Project Structure
-your-ecommerce-segmentation-project/
+my-ecommerce-segmentation-project/
 ├── data/
-│   ├── raw/                 # Original data files
-│   └── processed/           # Cleaned data files
-├── notebooks/               # Jupyter notebooks with analysis
-│   ├── 1_data_exploration.ipynb
-│   ├── 2_data_cleaning.ipynb
-│   ├── 3_customer_segmentation.ipynb
-│   ├── 4_churn_prediction.ipynb
-│   └── 5_results_and_insights.ipynb
-├── src/                     # Python code
-│   ├── db_connect.py        # Database connection
-│   └── __init__.py
-├── reports/                 # Charts and final presentation
-│   └── figures/
-├── README.md
-└── requirements.txt
+│   ├── raw/                     # Untouched, initial datasets (e.g., Kaggle CSVs)
+│   └── processed/               # Cleaned and ready-to-use datasets
+├── models/                     # DBT models
+│   ├── staging/
+│   │   └── raw_ecommerce/      # Your source system name
+│   ├── prep/
+│   │   
+│   └── marts/
+│       
+├── notebooks/                 # Jupyter notebooks
+│   ├── 1_data_ingestion_and_initial_eda.ipynb
+│   ├── 2_data_cleaning_and_preprocessing.ipynb
+│   ├── 3_feature_engineering_rfm_external_data.ipynb
+│   ├── 4_modeling_segmentation_churn.ipynb
+│   └── 5_insights_and_recommendations.ipynb
+├── src/                       # Non-dbt specific code
+│   ├── python_scripts/
+│   │   ├── ingest_raw_data.ipynb
+│   ├── sql_dbt_models/        # Entire DBT project structure (mirror of models/)
+│   └── sql_queries/           # Ad-hoc or external SQL queries
+│       ├── event_metadata.sql
+│       └── product_metadata.sql
+├── reports/
+│   ├── figures/               # All visualizations (charts, plots)
+│   └── final_presentation.pdf
+├── tableau_dashboard/
+│   └── ecommerce_segmentation_dashboard.twbx               
+├── target/                    # dbt build artifacts
+├── dbt_project.yml            # dbt config file
+├── index.html
+├── README.md                  # Project overview and instructions
+├── requirements.txt           # Python dependencies
+└── setup.py                   # Optional packaging script
 Setup Instructions
 1. Install Required Libraries
 bashpip install -r requirements.txt
@@ -62,7 +80,6 @@ engine = get_engine()
 df = pd.read_sql(text("SELECT * FROM customers;", con=engine)
 print(df.head())
 Key Findings
-(Add your analysis results here as you complete the project)
 
 Found X different customer segments
 Identified key factors that predict customer churn
