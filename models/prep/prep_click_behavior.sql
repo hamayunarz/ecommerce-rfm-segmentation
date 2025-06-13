@@ -11,13 +11,14 @@ WITH click_events AS (
     FROM {{ ref('stg_click_event_metadata') }}
     WHERE product_id IS NOT NULL
 ),
-session_info AS (
+session_summary AS (
     SELECT
         session_id,
         COUNT(*) AS total_clicks,
         COUNT(DISTINCT product_id) AS products_viewed,
         MIN(event_time) AS session_start,
-        MAX(event_time) AS session_end
+        MAX(event_time) AS session_end,
+        EXTRACT(EPOCH FROM (MAX(event_time) - MIN(event_time)))/60 AS session_duration_minutes
     FROM click_events
     GROUP BY session_id
 )
@@ -25,8 +26,9 @@ SELECT
     c.*,
     s.total_clicks,
     s.products_viewed,
-    session_start,
-    session_end
+    s.session_start,
+    s.session_end,
+    s.session_duration_minutes
 FROM click_events c
-JOIN session_info s ON c.session_id = s.session_id
+JOIN session_summary s ON c.session_id = s.session_id
 ORDER BY c.event_time
