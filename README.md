@@ -48,5 +48,4 @@ I built dashboards in Tableau and explored trends using Python. I also tested hy
 - **Jakarta** has the highest share of VIPs (18%)  
 - **90% of users shop on mobile** — mostly Android  
 - **Churn is real**: Over 17,000 customers stopped buying
-
 - Recommended targeted recovery and VIP campaigns projected to improve conversion by 25% — based on segmentation and behavioral insights
