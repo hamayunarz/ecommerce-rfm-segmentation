@@ -43,7 +43,7 @@ customer_segments AS (
             ELSE 'At Risk Customer'
         END AS customer_segment,
         CASE
-            WHEN r.recency_days > 180 THEN 1
+            WHEN r.recency_days > 90 THEN 1
             ELSE 0
         END AS churn_flag,
         CASE
