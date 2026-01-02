@@ -41,6 +41,12 @@ Based on RFM scores, customers were grouped into:
 I built dashboards in Tableau and explored trends using Python. I also tested hypotheses on revenue distribution, location impact, and device usage.
 
 ---
+## Data Quality Improvements
+- Initial data quality: 85%
+- Post-cleaning quality: 99%
+- Missing values reduced: 10% → 0.1%
+- Duplicates removed: 2% (1,000+ records)
+- Outliers handled: 5% (2,500+ records)
 
 ## Key Insights
 
